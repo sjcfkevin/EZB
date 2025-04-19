@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-ezb-text-primary;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    perspective: 1000px;
+    background: transparent;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+:root {
+  --gold: #fffb01;
+  --light-shadow: #ad750b;
+  --dark-shadow: #f79c00;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10%) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(110%) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.animate-fall {
+  animation: fall 8s linear infinite;
+}
+
+@keyframes fall-slow {
+  0% {
+    transform: translateY(-10%) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(110%) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.animate-fall-slow {
+  animation: fall-slow 12s linear infinite;
+}
+
+.my-neon {
+  text-shadow: 0 0 5px hsla(0, 0%, 100%, .7), 0 0 10px hsla(0, 0%, 100%, .5);
+}
+
+.my-text-neon {
+  text-shadow: 0 0 5px hsl(227.08deg 100% 50% / 70%), 0 0 10px hsl(0deg 0% 100% / 50%)
+}
+
+/* .box-neon {
+  box-shadow: 0 0 5px hsla(59, 100%, 50%, 0.7), 0 0 10px hsla(56, 95%, 23%, 0.5)
+} */
+
+/* Custom components */
+@layer components {
+  .ezb-container {
+    @apply container px-4 md:px-8 lg:px-12 mx-auto;
+    transform-style: preserve-3d;
+  }
+
+  .ezb-section {
+    @apply py-16 sm:py-20 lg:py-24;
+    transform-style: preserve-3d;
+    position: relative;
+    background: transparent;
+  }
+
+  .parallax-section {
+    @apply relative overflow-hidden;
+    transform-style: preserve-3d;
+  }
+
+  .parallax-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(88, 101, 242, 0.1), rgba(149, 70, 196, 0.1));
+    transform: translateZ(-10px);
+    z-index: -1;
+  }
+
+  .parallax-content {
+    @apply relative z-10;
+    transform: translateZ(20px);
+  }
+
+  .parallax-deep {
+    transform: translateZ(-30px);
+    transition: transform 0.3s ease-out;
+  }
+
+  .parallax-medium {
+    transform: translateZ(0);
+    transition: transform 0.3s ease-out;
+  }
+
+  .parallax-shallow {
+    transform: translateZ(30px);
+    transition: transform 0.3s ease-out;
+  }
+
+  .parallax-float {
+    animation: float-parallax 6s ease-in-out infinite;
+  }
+
+  @keyframes float-parallax {
+
+    0%,
+    100% {
+      transform: translateZ(0) translateY(0);
+    }
+
+    50% {
+      transform: translateZ(20px) translateY(-20px);
+    }
+  }
+
+  .ezb-heading {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6;
+    text-shadow: 0 5px 15px rgba(88, 101, 242, 0.5);
+    transform: translateZ(10px);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+  }
+
+  .ezb-subheading {
+    @apply text-2xl md:text-3xl font-semibold text-white mb-4;
+    text-shadow: 0 3px 10px rgba(88, 101, 242, 0.4);
+    transform: translateZ(5px);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+  }
+
+  .ezb-text {
+    @apply text-lg text-ezb-text-secondary mb-6 max-w-2xl;
+    transform: translateZ(2px);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+  }
+
+  .ezb-button {
+    @apply px-6 py-3 border border-white rounded-md bg-transparent text-white hover:bg-white/10 transition-all duration-300 font-medium inline-flex items-center justify-center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transform: translateZ(15px);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .ezb-button:hover {
+    transform: translateZ(20px) scale(1.05);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+  }
+
+  .ezb-button-primary {
+    @apply bg-ezb-accent border-ezb-accent text-white hover:bg-ezb-accent/80 hover:border-ezb-accent/80;
+    box-shadow: 0 5px 15px rgba(88, 101, 242, 0.4);
+  }
+
+  .ezb-card {
+    @apply bg-transparent p-6 rounded-lg border border-ezb-border/30 backdrop-blur-sm;
+    transform-style: preserve-3d;
+    transform: translateZ(5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .ezb-gradient-text {
+    @apply bg-gradient-to-r from-ezb-accent to-ezb-accent2 bg-clip-text text-transparent;
+    text-shadow: 0 2px 5px rgba(88, 101, 242, 0.3);
+  }
+
+  .ezb-glass {
+    @apply bg-transparent backdrop-blur-md border border-white/10 rounded-xl;
+    transform-style: preserve-3d;
+    transform: translateZ(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Parallax scroll effect */
+  @media (min-width: 768px) {
+    .parallax-section {
+      will-change: transform;
+    }
+
+    .parallax-content {
+      will-change: transform;
+    }
+  }
+
+  /* 3D parallax elements */
+  .parallax-deep {
+    transform: translateZ(-20px);
+  }
+
+  .parallax-medium {
+    transform: translateZ(10px);
+  }
+
+  .parallax-shallow {
+    transform: translateZ(30px);
+  }
+
+  /* 3D animated elements */
+  .float-3d {
+    animation: float-3d 6s ease-in-out infinite;
+  }
+
+  @keyframes float-3d {
+
+    0%,
+    100% {
+      transform: translateZ(0) translateY(0);
+    }
+
+    50% {
+      transform: translateZ(20px) translateY(-20px);
+    }
+  }
+
+  .card-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .card-3d-inner {
+    transform-style: preserve-3d;
+  }
+
+  .icon-3d {
+    transform-style: preserve-3d;
+    transform: translateZ(10px);
+  }
+
+  /* Remove background from specific sections */
+  .hero-section {
+    @apply bg-transparent;
+  }
+
+  .benefits-section {
+    @apply bg-transparent;
+  }
+
+  .tokenomics-section {
+    @apply bg-transparent;
+  }
+
+  .calculator-section {
+    @apply bg-transparent;
+  }
+
+  .faq-section {
+    @apply bg-transparent;
+  }
+}
+
+/* Keep existing animations */
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.my-title {
+  transform: translate(50%, -50%);
+  text-transform: uppercase;
+  font-family: verdana;
+  font-size: 6rem;
+  font-weight: 700;
+  color: #f5f5f5;
+  text-shadow: 1px 1px 1px #919191,
+    1px 2px 1px #919191,
+    1px 3px 1px #919191,
+    1px 4px 1px #919191,
+    1px 5px 1px #919191,
+    1px 6px 1px #919191,
+    1px 7px 1px #919191,
+    1px 8px 1px #919191,
+    1px 9px 1px #919191,
+    1px 10px 1px #919191,
+    1px 18px 6px rgba(16, 16, 16, 0.4),
+    1px 22px 10px rgba(16, 16, 16, 0.2),
+    1px 25px 35px rgba(16, 16, 16, 0.2),
+    1px 30px 60px rgba(16, 16, 16, 0.4);
+}
+
+.wrapper {
+  display: grid;
+  place-content: center;
+  text-transform: uppercase;
+}
+
+.wrapper>div {
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-size: clamp(5rem, 3vw, 6rem);
+  grid-area: overlap;
+  letter-spacing: 1px;
+  -webkit-text-stroke: 4px transparent;
+}
+
+div.bg {
+  background-image: repeating-linear-gradient(105deg,
+      var(--gold) 0%,
+      var(--dark-shadow) 5%,
+      var(--gold) 12%);
+  color: transparent;
+  filter: drop-shadow(5px 15px 15px black);
+  transform: scaleY(1.05);
+  transform-origin: top;
+}
+
+div.fg {
+  background-image: repeating-linear-gradient(5deg,
+      var(--gold) 0%,
+      var(--light-shadow) 23%,
+      var(--gold) 31%);
+  color: #1e2127;
+  transform: scale(1);
+}
+
+.lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  margin: auto;
+  width: 90vw;
+  display: flex;
+  justify-content: space-between; /* Distribute lines evenly */
+}
+
+.line {
+  position: relative;
+  width: 1px;
+  height: 100%;
+  /*background: #ffffff;  /* Line color */
+  overflow: hidden;
+}
+
+.line::after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 15vh;
+  width: 100%;
+  top: -50%;
+  left: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
+  animation: drop 7s 0s infinite;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+}
+
+/* Different colors for each line's pseudo-element */
+.line:nth-child(1)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #FF4500 75%, #FF4500 100%);
+  animation-delay: 0.5s;
+}
+
+.line:nth-child(2)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #32CD32 75%, #32CD32 100%);
+  animation-delay: 1s;
+}
+
+.line:nth-child(3)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #1E90FF 75%, #1E90FF 100%);
+  animation-delay: 1.5s;
+}
+
+.line:nth-child(4)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #FFD700 75%, #FFD700 100%);
+  animation-delay: 2s;
+}
+
+.line:nth-child(5)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #8A2BE2 75%, #8A2BE2 100%);
+  animation-delay: 2.5s;
+}
+
+.line:nth-child(6)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #20B2AA 75%, #20B2AA 100%);
+  animation-delay: 3s;
+}
+
+.line:nth-child(7)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #DC143C 75%, #DC143C 100%);
+  animation-delay: 3.5s;
+}
+
+.line:nth-child(8)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #00FA9A 75%, #00FA9A 100%);
+  animation-delay: 4s;
+}
+
+.line:nth-child(9)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #FF1493 75%, #FF1493 100%);
+  animation-delay: 4.5s;
+}
+
+.line:nth-child(10)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #00BFFF 75%, #00BFFF 100%);
+  animation-delay: 3s;
+}
+
+@keyframes drop {
+  0% {
+    top: -50%;
+  }
+  100% {
+    top: 110%;
+  }
+}
