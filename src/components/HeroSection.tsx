@@ -139,7 +139,7 @@ const HeroSection: React.FC = () => {
                   EZB Chart
                 </a>
               </button> */}
-              <button className={`${sectionStyles.button.secondary} min-w-36`}>
+              <button className={`${sectionStyles.button.secondary} min-w-36 z-9999`}>
                 <a href="https://x.com/EZBrewards" target="_blank" rel="noopener noreferrer">
                   <span className="indicator"></span>
                   X
