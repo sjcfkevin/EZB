@@ -22,6 +22,10 @@ const useTypewriter = (text: string, speed: number = 50) => {
   return displayText;
 };
 
+const move_twitter = () => {
+  window.location.href = 'https://x.com/EZBrewards';
+}
+
 const HeroSection: React.FC = () => {
   const titleText = "Earn BNB rewards every 5 minutes just by holding EZB";
   const typedTitle = useTypewriter(titleText, 70);
@@ -125,21 +129,7 @@ const HeroSection: React.FC = () => {
               {...fadeInUp}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <button
-                className={`${sectionStyles.button.secondary} min-w-36`}
-              >
-                <a href="https://pancakeswap.finance/swap" target="_blank" rel="noopener noreferrer">
-                  <span className="indicator"></span>
-                  Buy Now
-                </a>
-              </button>
-              {/* <button className={`${sectionStyles.button.secondary} min-w-36`} disabled={true} >
-                <a href="https://bscscan.com/address/0xa0c8fb9cdfb4b7ff64bf22b11311e66caca6e703" target="_blank" rel="noopener noreferrer">
-                  <span className="indicator"></span>
-                  EZB Chart
-                </a>
-              </button> */}
-              <button className={`${sectionStyles.button.secondary} min-w-36 z-9999`}>
+              <button className={`${sectionStyles.button.secondary} min-w-36 z-9999`} onClick={move_twitter}>
                 <a href="https://x.com/EZBrewards" target="_blank" rel="noopener noreferrer">
                   <span className="indicator"></span>
                   X
