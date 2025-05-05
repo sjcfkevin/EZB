@@ -23,7 +23,7 @@ const useTypewriter = (text: string, speed: number = 50) => {
 };
 
 const move_twitter = () => {
-  window.location.href = 'https://x.com/EZBrewards';
+  window.open('https://x.com/EZBrewards', '_blank');
 }
 
 const HeroSection: React.FC = () => {
@@ -32,19 +32,6 @@ const HeroSection: React.FC = () => {
 
   return (
     <section id="hero" className={sectionStyles.base}>
-            {/* <div className="lines">
-        <div className="line"></div>
-        <div className="line"></div>
-        <div className="line"></div>
-        <div className="line"></div>
-        <div className="line"></div>
-        <div className="line"></div>
-        <div className="line"></div>
-        <div className="line"></div>
-        <div className="line"></div>
-        <div className="line"></div>
-      </div> */}
-      {/* Background elements */}
       <div className={sectionStyles.background.grid}>
         <div className={sectionStyles.background.gridPattern} />
         <div className={sectionStyles.background.gradient} />
@@ -129,12 +116,8 @@ const HeroSection: React.FC = () => {
               {...fadeInUp}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <button className={`${sectionStyles.button.secondary} min-w-36 z-9999`} onClick={move_twitter}>
-                <a href="https://x.com/EZBrewards" target="_blank" rel="noopener noreferrer">
-                  <span className="indicator"></span>
-                  X
-                </a>
-              </button>
+              <img src="./twitter.png" onClick={move_twitter} alt="twitter" className="w-12 h-12" />
+              
             </MotionDiv>
           </MotionDiv>
         </div>
