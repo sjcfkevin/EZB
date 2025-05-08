@@ -169,7 +169,7 @@ const BuySection: React.FC = () => {
                   </li>
                 </ul>
               </div>
-              
+{/*               
               <Button 
                 variant="robotPrimary" 
                 className={`${sectionStyles.button.primary} w-full`}
@@ -179,7 +179,7 @@ const BuySection: React.FC = () => {
                   <span className="indicator"></span>
                   Buy EZB Now <ArrowRight size={18} className="ml-2" />
                 </a>
-              </Button>
+              </Button> */}
             </div>
           </MotionDiv>
         </div>
