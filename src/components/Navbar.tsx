@@ -58,7 +58,7 @@ const Navbar: React.FC = () => {
               {link.name}
             </a>
           ))}
-          <Button
+          {/* <Button
             variant="robotPrimary"
             className={`${sectionStyles.button.primary}`}
             asChild
@@ -67,7 +67,7 @@ const Navbar: React.FC = () => {
               <span className="indicator"></span>
               Buy Now <ArrowRight size={18} className="ml-2" />
             </a>
-          </Button>
+          </Button> */}
         </nav>
 
         {/* Mobile Menu Button */}
