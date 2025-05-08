@@ -25,25 +25,7 @@ const Footer: React.FC = () => {
             <p className="text-white/80 mb-6">
               The revolutionary BEP-20 token that pays automatic BNB rewards every 5 minutes.
             </p>
-            <div className="flex justify-center md:justify-start gap-4">
-              <a 
-                href="https://x.com/EZBrewards" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center text-white hover:scale-110 transition-transform duration-300"
-              >
-                <Twitter size={20} />
-              </a>
-              <a 
-                href="https://ezbtoken.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center text-white hover:scale-110 transition-transform duration-300"
-              >
-                <Globe size={20} />
-              </a>
-              
-            </div>
+
           </MotionDiv>
 
           <MotionDiv 
@@ -91,16 +73,6 @@ const Footer: React.FC = () => {
                   className="text-white/80 hover:text-white transition-colors duration-300"
                 >
                   Buy on PancakeSwap
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="https://t.me/ezbtoken" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-white/80 hover:text-white transition-colors duration-300"
-                >
-                  Join Telegram
                 </a>
               </li>
             </ul>
