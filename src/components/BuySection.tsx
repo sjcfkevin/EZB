@@ -113,7 +113,7 @@ const BuySection: React.FC = () => {
                   <p className="text-white/80 mb-6">
                     Open PancakeSwap in your wallet's browser or connect your wallet to the PancakeSwap website.
                   </p>
-                  <Button 
+                  {/* <Button 
                     variant="robot" 
                     asChild
                     className={sectionStyles.button.primary}
@@ -122,7 +122,7 @@ const BuySection: React.FC = () => {
                       <span className="indicator"></span>
                       Open PancakeSwap
                     </a>
-                  </Button>
+                  </Button> */}
                 </div>
               </MotionDiv>
             </div>
