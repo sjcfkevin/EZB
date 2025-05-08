@@ -109,9 +109,9 @@ const BuySection: React.FC = () => {
                   3
                 </div>
                 <div className={sectionStyles.card.base}>
-                  <MotionH3 className="text-2xl font-semibold mb-4 text-white">Connect to PancakeSwap</MotionH3>
+                  <MotionH3 className="text-2xl font-semibold mb-4 text-white">Connect to FourMeme</MotionH3>
                   <p className="text-white/80 mb-6">
-                    Open PancakeSwap in your wallet's browser or connect your wallet to the PancakeSwap website.
+                    Open FourMeme in your wallet's browser or connect your wallet to the FourMeme website.
                   </p>
                   {/* <Button 
                     variant="robot" 

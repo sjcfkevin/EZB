@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
       </div>
 
       <div className={sectionStyles.container}>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <MotionDiv 
             className="text-center md:text-left"
             {...fadeInUp}
@@ -53,26 +53,6 @@ const Footer: React.FC = () => {
               <li>
                 <a href="#tokenomics" className="text-white/80 hover:text-white transition-colors duration-300">
                   Tokenomics
-                </a>
-              </li>
-            </ul>
-          </MotionDiv>
-
-          <MotionDiv 
-            className="text-center md:text-left"
-            {...fadeInUp}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <h4 className="text-xl font-semibold text-white mb-6">Important Links</h4>
-            <ul className="space-y-3">
-              <li>
-                <a 
-                  href="https://pancakeswap.finance/swap" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-white/80 hover:text-white transition-colors duration-300"
-                >
-                  Buy on PancakeSwap
                 </a>
               </li>
             </ul>
