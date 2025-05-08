@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h4 className="text-xl font-semibold text-white mb-6">Quick Links</h4>
-            <ul className="space-y-3">
+            <ul className="space-y-3 flex gap-12">
               <li>
                 <a href="#hero" className="text-white/80 hover:text-white transition-colors duration-300">
                   Home
